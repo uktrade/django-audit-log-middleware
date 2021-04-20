@@ -18,7 +18,7 @@ class AuditLogMiddleware:
         return client_ip or "Unknown"
 
     # Defined so it we can mock it
-    def _get_utc_now():
+    def _get_utc_now(self):
         return datetime.utcnow()
 
     #  Check for custom user id in request.user
