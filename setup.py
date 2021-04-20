@@ -8,7 +8,7 @@ with open("README.rst", "r") as fh:
 
 setup(
     name="django_audit_log_middleware",
-    version="0.0.1",
+    version="0.0.2",
     packages=setuptools.find_packages(),
     author="Ross Miller",
     author_email="ross.miller@digita.trade.gov.uk",
@@ -17,8 +17,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/x-rst",
     install_requires=[
-        "django~=3.1.6",
-        "django-ipware~=3.0",
+        "django>=2.2.0",
+        "django-ipware~=3.0.2",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
