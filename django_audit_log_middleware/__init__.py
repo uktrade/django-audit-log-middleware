@@ -37,6 +37,24 @@ class AuditLogMiddleware:
 
         return ""
 
+    def _get_email(self):
+        if self.request.user.is_authenticated:
+            return self.request.user.email
+
+        return "anonymous"
+
+    def _get_first_name(self):
+        if self.request.user.is_authenticated:
+            return self.request.user.first_name
+
+        return ""
+
+    def _get_last_name(self):
+        if self.request.user.is_authenticated:
+            return self.request.user.last_name
+
+        return ""
+
     def __call__(self, request):
         self.request = request
 
@@ -47,9 +65,9 @@ class AuditLogMiddleware:
             f"{request.build_absolute_uri()}\t"
             f"{self._get_ip_address()}\t"
             f"{self._get_custom_user_id()}\t"
-            f"{request.user.email}\t"
-            f"{request.user.first_name}\t"
-            f"{request.user.last_name}"
+            f"{self._get_email()}\t"
+            f"{self._get_first_name()}\t"
+            f"{self._get_last_name()}"
         )
 
         response = self.get_response(request)
