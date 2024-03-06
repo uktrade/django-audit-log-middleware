@@ -18,7 +18,7 @@ setup(
     long_description_content_type="text/x-rst",
     install_requires=[
         "django>=2.2.0",
-        "django-ipware~=3.0.2",
+        "django-ipware>=3.0.2",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
