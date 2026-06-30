@@ -17,7 +17,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/x-rst",
     install_requires=[
-        "django>=5.0",
+        "django>=4.2",
         "django-ipware>=7.0.1,<8.0.0",
     ],
     classifiers=[
